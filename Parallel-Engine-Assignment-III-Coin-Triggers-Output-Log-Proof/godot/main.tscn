@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bnsppwwr3mkmy"]
+
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dtb73l54ur2rf" path="res://area_3d.gd" id="3_h2yge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1bvp3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1bvp3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lquwl"]
+height = 1.0493164
+
+[node name="Main" type="Node3D" unique_id=1002946704]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1742199913]
+transform = Transform3D(1.4087589, 0, 0, 0, 1, 0, 0, 0, 1.3534099, 0, -0.39192033, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=170809]
+transform = Transform3D(16.703102, 0, 0, 0, 1, 0, 0, 0, 16.164206, 0, 0, 0)
+shape = SubResource("BoxShape3D_1bvp3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/CollisionShape3D" unique_id=306296698]
+transform = Transform3D(0.9933399, 0, 0, 0, 0.7907249, 0, 0, 0, -0.985088, 0, 0, 0)
+mesh = SubResource("BoxMesh_lquwl")
+
+[node name="ProtoController" parent="." unique_id=822771527 groups=["Player"] instance=ExtResource("1_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022428513, -0.0007250309, -0.062425613)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=342972170]
+transform = Transform3D(0.19313508, 0, 0, 0, 0.729681, 0, 0, 0, 0.81410736, 0.817536, 0.28580546, 0)
+script = ExtResource("3_h2yge")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1717390089]
+transform = Transform3D(0.03966225, 0.33300015, 0, -1.0263677, 0.012868231, 0, 0, 0, 1, 1.0130033, 0.5425117, 0)
+mesh = SubResource("CylinderMesh_1bvp3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=265229725]
+transform = Transform3D(0.053372115, 0.81320924, 0, -1.3151112, 0.03300307, 0, 0, 0, 1.2708466, 1.1242332, 0.55433726, 0)
+shape = SubResource("CylinderShape3D_lquwl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=661339550]
+transform = Transform3D(1, 0, 0, 0, 0.69224393, 0.7216636, 0, -0.7216636, 0.69224393, 0, 3.9024327, 4.388155)
