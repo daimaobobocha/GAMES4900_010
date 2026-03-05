@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://cb45ok3nb3vcj" path="res://caller.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://b1kwscspjh661" path="res://receiver.gd" id="2_0xm2m"]
+
+[node name="Main" type="Node3D" unique_id=540551667]
+
+[node name="Caller" type="Node3D" parent="." unique_id=629751473 node_paths=PackedStringArray("receiver")]
+script = ExtResource("1_ig7tw")
+receiver = NodePath("../Receiver")
+
+[node name="Receiver" type="Node3D" parent="." unique_id=1224810916]
+script = ExtResource("2_0xm2m")
