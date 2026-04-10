@@ -41,7 +41,6 @@ namespace AOTADev
 
         private void MoveLeftRight()
         {
-            // 只沿着角色自己的左右方向移动
             Vector3 right = transform.right;
             Vector3 currentVelocity = _rb.linearVelocity;
             Vector3 horizontalVelocity = Vector3.Project(currentVelocity, right);

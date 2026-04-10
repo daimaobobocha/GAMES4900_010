@@ -1,17 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelSwitchTrigger04 : MonoBehaviour
+public class LS3 : MonoBehaviour
 {
-    [SerializeField] private string targetSceneName = "Level4";
-
     private bool playerInRange = false;
 
     private void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene(targetSceneName);
+            SceneManager.LoadScene("Level4");
         }
     }
 

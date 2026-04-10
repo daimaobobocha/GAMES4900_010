@@ -3,15 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class LS1 : MonoBehaviour
 {
-    [SerializeField] private string targetSceneName = "Level2";
-
     private bool playerInRange = false;
 
     private void Update()
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene(targetSceneName);
+            SceneManager.LoadScene("Level2");
         }
     }
 
