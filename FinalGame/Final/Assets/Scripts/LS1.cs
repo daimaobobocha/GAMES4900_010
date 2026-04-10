@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelSwitchTrigger01 : MonoBehaviour
+public class LS1 : MonoBehaviour
 {
     [SerializeField] private string targetSceneName = "Level2";
 
